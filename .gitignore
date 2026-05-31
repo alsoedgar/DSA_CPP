@@ -1,0 +1,43 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Graphics maps
+*.pyc
+*.pyo
+
+# Executables
+# --------------------------
+# Ignores all Windows executable files (like the one in Open_address_hashmap)
+*.exe
+# Ignores compiled binaries without extensions on macOS/Linux
+*.out
+*.app
+
+# IDEs and Editors
+# --------------------------
+# Ignores your local VS Code settings/build tasks so they don't overwrite others
+.vscode/
+
+# System Files
+# --------------------------
+.DS_Store
+Thumbs.db
