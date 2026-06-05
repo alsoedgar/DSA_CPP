@@ -11,21 +11,20 @@ int main(){
     insertNumber(&root, 24);
     insertNumber(&root, 5);
     insertNumber(&root, 16);
+    insertNumber(&root, 6);
+
+    //            15
+    //       11        24
+    //     5    6    16
+    //
 
     printTree(root);
 
-    bool temp = findNumber(root, 16);
-    if(temp){
-        cout << "16 was found\n";
-     } else cout << "16 not in tree\n";
-
-    temp = findNumber(root, 111);
-    if(temp){
-        cout << "111 was found\n";
-     } else cout << "111 not in tree\n";
-
-
-     deleteNode(root, 15);
-     printTree(root);
-
-}
+    depthFirstTraversalIterative(root);
+    cout << "\n";
+    depthFirstTraversalRecursive(root);
+    cout << '\n';
+    breadthFirstSearchIterative(root);
+    cout << 'n';
+  
+    

@@ -25,4 +25,11 @@ void printTreeRec(treeNode* root, int level);
 void printTree(treeNode* root);
 treeNode* deleteNode(treeNode* root, int value);
 
+//time complexity is O(n), n = # of nodes
+//space complexity is O(n)
+void depthFirstTraversalIterative(treeNode* const root);
+void depthFirstTraversalRecursive(treeNode* root);
+void breadthFirstSearchIterative(treeNode* const root);
+
+
 #endif

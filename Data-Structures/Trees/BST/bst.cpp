@@ -1,8 +1,10 @@
 #include <iostream>
 #include <string>
+#include <vector>
 #include "bst.h"
 
 using std::cout;
+
 
 treeNode* createNode(int value){
     treeNode *result = new treeNode();
@@ -34,6 +36,8 @@ bool insertNumber(treeNode** rootptr, int value){
     }
 }
 
+//targeted searching, takes advantage of BST properties
+//O(logn) search complexity 
 bool findNumber(treeNode* root, int value){
     if (root == nullptr){
         return false;
@@ -133,3 +137,60 @@ treeNode* deleteNode(treeNode* root, int value){
     }
     return root;
 }
+
+//pre-order traversal (good for copying trees)
+void depthFirstTraversalIterative(treeNode* const root){
+    std::vector<treeNode*> stack;
+
+    if (root->value == -1 || root == nullptr) return;
+    stack.push_back(root);
+
+    while(!stack.empty()){
+        treeNode* current = stack.back();
+        cout << current->value << " ";
+        stack.pop_back();
+        
+        if(current->right != nullptr){
+            stack.push_back(current->right);
+        }
+        if(current->left != nullptr){
+            stack.push_back(current->left);
+        }
+    }
+}
+
+//post-order, good for deleting trees!
+void depthFirstTraversalRecursive(treeNode* root){
+    if (root == nullptr || root->value == -1) return;
+    
+    depthFirstTraversalRecursive(root->left); //left
+    depthFirstTraversalRecursive(root->right); //right
+
+    cout << root->value << " "; //root
+}
+
+//O(n) time & space complexity (with good implementation of queue)
+void breadthFirstSearchIterative(treeNode* root){
+    if (root == nullptr) return;
+
+    std::vector<treeNode*> queue;
+    queue.push_back(root);
+
+    while(!queue.empty()){
+        treeNode* currentNode = queue.front();
+        cout << queue.at(0)->value << " ";
+
+        queue.erase(queue.begin());
+
+        //check left independently
+        if(currentNode->left!= nullptr){
+            queue.push_back(currentNode->left);
+        }
+        //check right independently
+        if (currentNode->right != nullptr){
+            queue.push_back(currentNode->right);
+        }
+
+    }
+}
+
