@@ -11,7 +11,7 @@ struct Node {
     Node(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 
-// WRITE YOUR SOLUTION HEREW
+// WRITE YOUR SOLUTION HERE
 int maxPathSum(Node* root) {
     if (root == nullptr) return -INT_MAX;
     if (root->left == nullptr && root->right == nullptr) return root->val;
@@ -19,6 +19,16 @@ int maxPathSum(Node* root) {
     int maxChildPathSum = std::max(maxPathSum(root->left), maxPathSum(root->right));
 
     return root->val + maxChildPathSum;
+}
+
+void printTree(Node* root){
+    if (root == nullptr) return;
+
+    printTree(root->left);
+    std::cout << root-> val << " ";
+    printTree(root->right);
+    
+    return;
 }
 
 int main() {
@@ -38,5 +48,8 @@ int main() {
     root->right->right = new Node(1);
 
     std::cout << "Max Path Sum: " << maxPathSum(root) << std::endl; // Expected: 20
+    std::cout << std::endl;
+    printTree(root);
+
     return 0;
 }
