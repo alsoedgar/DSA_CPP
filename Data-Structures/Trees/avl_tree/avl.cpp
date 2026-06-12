@@ -1,6 +1,8 @@
 #include "avl.h"
 #include <iostream>
 
+
+//in-order traversal
 void printTree(Node* root){
     if(root == nullptr) return;
 
