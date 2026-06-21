@@ -23,7 +23,7 @@ void MaxHeap::maxHeapify(int index){ //bubble down
         }
 
         //if largest is parent, then its in place
-        if(largest== index){
+        if(largest == index){
             break;
         }
 
