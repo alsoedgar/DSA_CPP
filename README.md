@@ -16,6 +16,7 @@ My goal is to deep-dive into DSA to sharpen my problem-solving skills! To fully 
 ### Algorithms
 * **Searching:** Linear Search, Binary Search, BFS, and DFS
 * **Sorting:** Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quicksort
+* **Graph:** Shortest path pathfinding (Dijkstra's), and MST (Prims)
 
 ---
 
